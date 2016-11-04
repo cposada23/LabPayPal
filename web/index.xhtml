@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Carrito</title>
+        <style>
+            .product{
+                width: 150px;
+                height: 200px;
+                float:left;
+                margin-right: 20px;
+            }
+            
+        </style>
+    </h:head>
+    <h:body>
+        <h1>Bienvenido al sitio de ecommerce</h1>
+        
+        <h:form>
+            
+            <c:forEach items ="#{productController.list} " var="p">
+                <div class="product">
+                    <h:graphicImage library="images" name="#{p.image}" width="100px" height="150px"/>
+                    <br/>
+                    Name:#{p.name}<br/>
+                    price: #{p.price.doubleValue()}<br/>
+                    <h:commandButton value="Add to cart" action="#{sp.addCart(p)}"/>
+                </div>
+            </c:forEach>
+        </h:form>
+    </h:body>
+</html>
+
