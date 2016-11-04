@@ -56,12 +56,15 @@
                         
                     </f:facet>
                     
-                    <h:commandButton value="update" action="#{sp.update()}"/>
+                    
+                </h:dataTable>
+                <h:commandButton value="update" action="#{sp.update()}"/>
                     
                     <h:commandButton value="pago" action="#{sp.payment()}"/>
-                </h:dataTable>
             </h:form>
+            
         </f:view>
+        <h:link outcome="index" value="continue la compra..."/>
 
     </h:body>
 </html>
